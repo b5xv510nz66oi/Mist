@@ -1,74 +1,72 @@
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/b5xv510nz66oi/Mist/refs/heads/main/Library.lua"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/sametexe001/sametlibs/refs/heads/main/Serotonin/Library.lua"))()
 
-local Window = Library:Window({
-    Name = "Mist",
-    SubTitle = "SubName",
-    TimeRemaining = "5 years"
-})
+local Window = Library:Window({Name = "Window", Logo = "90363697817722"})
+local Watermark = Library:Watermark("This is a watermark")
+local KeybindList = Library:KeybindList()
 
-local Pages = { }
+local ArmorViewer = Library:ArmorViewer()
+local TargetHud = Library:TargetHud()
 
-for Index = 1, 4 do 
-    Pages[Index] = Window:Page({
-        Icon = "131145598162617",
-        Columns = 2
-    })
-end
+TargetHud:SetPlayer(game.Players.LocalPlayer)
 
-local SettingsPage = Library:CreateSettingsPage(Window)
+local Bar1 = TargetHud:AddBar(Color3.fromRGB(255, 0, 0))
 
-local SectionLeft = Pages[1]:Section({Name = "Section", Icon = "131145598162617", Side = 1})
-local SectionRight = Pages[1]:Section({Name = "Section", Icon = "131145598162617", Side = 2})
+task.spawn(function()
+    while task.wait(1.5) do
+        Bar1:SetPercentage(math.random(1, 100))
+    end
+end)
 
-local Toggle = SectionLeft:Toggle({
-    Name = "Toggle",
-    Flag = "Toggle",
+local CombatPage = Window:Page({Name = "Combat", Columns = 2})
+local VisualsPage = Window:Page({Name = "Visuals", Columns = 2})
+local MiscPage = Window:Page({Name = "Misc", Columns = 2})
+local SettingsPage = Library:CreateSettingsPage(Window, KeybindList, Watermark)
+
+local AimbotSection = CombatPage:Section({Name = "Aimbot", Side = 1})
+local VisualsSection = VisualsPage:Section({Name = "Visuals", Side = 1})
+local MiscSection = MiscPage:Section({Name = "Misc", Side = 1})
+
+local Toggle = AimbotSection:Toggle({
+    Name = "Enabled",
+    Flag = "AimbotEnabled",
     Default = false,
     Callback = function(Value)
         print(Value)
     end
 })
 
-SectionLeft:Button({
+local Button = AimbotSection:Button({
     Name = "Button",
     Callback = function()
-        print("Button")
+        print("Button Pressed")
     end
 })
 
-SectionLeft:Button({
-    Name = "TestNotification",
-    Callback = function()
-        Library:Notification("This is a notification notifying..", "90449909165261", 5)
-    end
-})
-
-SectionLeft:Slider({
+local Slider = AimbotSection:Slider({
     Name = "Slider",
     Flag = "Slider",
-    Default = 50,
     Min = 0,
+    Default = 0,
     Max = 100,
-    Decimals = 1,
     Suffix = "%",
+    Decimals = 1,
     Callback = function(Value)
         print(Value)
     end
 })
 
-SectionLeft:Dropdown({
+local Dropdown = AimbotSection:Dropdown({
     Name = "Dropdown",
     Flag = "Dropdown",
-    Default = "First",
-    Items = {"First", "Second", "Third", "Fourth", "Fifth", "Sixth"},
+    Default = "Option 1",
+    Items = {"Option 1", "Option 2", "Option 3"},
     MaxSize = 100,
     Callback = function(Value)
         print(Value)
     end
 })
 
-SectionLeft:Label("Label")
-SectionLeft:Label("Label"):Colorpicker({
+AimbotSection:Label("Colorpicker"):Colorpicker({
     Name = "Colorpicker",
     Flag = "Colorpicker",
     Default = Color3.fromRGB(255, 255, 255),
@@ -77,22 +75,25 @@ SectionLeft:Label("Label"):Colorpicker({
     end
 })
 
-SectionLeft:Label("Keybind"):Keybind({
+AimbotSection:Label("Keybind"):Keybind({
     Name = "Keybind",
     Flag = "Keybind",
-    Default = Enum.KeyCode.E,
+    Default = Enum.UserInputType.MouseButton2,
+    Mode = "Toggle",
     Callback = function(Value)
         print(Value)
     end
 })
 
-SectionLeft:Textbox({
+AimbotSection:Textbox({
     Name = "Textbox",
-    Flag = "Textbox",
-    Default = "Text",
+    Placeholder = "...",
     Numeric = false,
-    Finished = true,
+    Finished = false,
+    Flag = "Textbox",
     Callback = function(Value)
         print(Value)
     end
 })
+
+Library:Notification("this is a notification", 5)
