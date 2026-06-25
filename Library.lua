@@ -84,9 +84,9 @@ do
  FadeSpeed = 0.15,
 
  Folders = {
- Directory = "mist-ttk",
- Configs = "mist-ttk/configs",
- Assets = "mist-ttk/assets",
+ Directory = "mist",
+ Configs = "mist/configs",
+ Assets = "mist/assets",
  },
 
  -- Ignore below
@@ -195,15 +195,15 @@ do
 
  local Themes = {
  ["Preset"] = {
- ["Window Outline"] = FromRGB(22, 22, 26),
- ["Accent"] = FromRGB(208, 62, 52),
- ["Background 1"] = FromRGB(11, 11, 13),
- ["Text"] = FromRGB(230, 230, 234),
- ["Inline"] = FromRGB(14, 14, 17),
- ["Element"] = FromRGB(24, 24, 29),
- ["Inactive Text"] = FromRGB(108, 108, 116),
- ["Border"] = FromRGB(38, 38, 46),
- ["Background 2"] = FromRGB(17, 17, 21),
+ ["Window Outline"] = FromRGB(18, 18, 22),
+ ["Accent"] = FromRGB(168, 48, 44),
+ ["Background 1"] = FromRGB(7, 7, 9),
+ ["Text"] = FromRGB(218, 218, 222),
+ ["Inline"] = FromRGB(10, 10, 12),
+ ["Element"] = FromRGB(20, 20, 24),
+ ["Inactive Text"] = FromRGB(98, 98, 106),
+ ["Border"] = FromRGB(32, 32, 38),
+ ["Background 2"] = FromRGB(12, 12, 15),
  }
  }
 
@@ -3740,7 +3740,7 @@ do
  TweenInfo.new(0.5, Enum.EasingStyle.Quint, Enum.EasingDirection.Out),
  { BackgroundTransparency = 0, Size = UDim2New(1, 0, 0, 1) }
  )
- Items["TextGlow"]:Tween(nil, { ImageTransparency = 0.7 })
+ Items["TextGlow"]:Tween(nil, { ImageTransparency = 1 })
  Items["Text"]:Tween(nil, { TextTransparency = 0 })
  Items["Hide"]:Tween(nil, { BackgroundTransparency = 0 })
 
