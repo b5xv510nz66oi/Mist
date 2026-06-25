@@ -76,17 +76,17 @@ do
  Flags = {},
 
  Tween = {
- Time = 0.25,
- Style = Enum.EasingStyle.Quart,
+ Time = 0.18,
+ Style = Enum.EasingStyle.Quad,
  Direction = Enum.EasingDirection.Out,
  },
 
- FadeSpeed = 0.2,
+ FadeSpeed = 0.15,
 
  Folders = {
- Directory = "uip100",
- Configs = "uip100/Configs",
- Assets = "uip100/Assets",
+ Directory = "mist-ttk",
+ Configs = "mist-ttk/configs",
+ Assets = "mist-ttk/assets",
  },
 
  -- Ignore below
@@ -195,15 +195,15 @@ do
 
  local Themes = {
  ["Preset"] = {
- ["Window Outline"] = FromRGB(0, 34, 37),
- ["Accent"] = FromRGB(94, 213, 213),
- ["Background 1"] = FromRGB(17, 21, 27),
- ["Text"] = FromRGB(255, 255, 255),
- ["Inline"] = FromRGB(19, 25, 31),
- ["Element"] = FromRGB(32, 38, 48),
- ["Inactive Text"] = FromRGB(185, 185, 185),
- ["Border"] = FromRGB(46, 52, 61),
- ["Background 2"] = FromRGB(24, 28, 36)
+ ["Window Outline"] = FromRGB(22, 22, 26),
+ ["Accent"] = FromRGB(208, 62, 52),
+ ["Background 1"] = FromRGB(11, 11, 13),
+ ["Text"] = FromRGB(230, 230, 234),
+ ["Inline"] = FromRGB(14, 14, 17),
+ ["Element"] = FromRGB(24, 24, 29),
+ ["Inactive Text"] = FromRGB(108, 108, 116),
+ ["Border"] = FromRGB(38, 38, 46),
+ ["Background 2"] = FromRGB(17, 17, 21),
  }
  }
 
@@ -516,7 +516,7 @@ do
  Name = "\0",
  Size = Size,
  Position = Position,
- BackgroundColor3 = FromRGB(166, 147, 243),
+ BackgroundColor3 = FromRGB(208, 62, 52),
  BackgroundTransparency = 1,
  Text = "",
  BorderSizePixel = 0,
@@ -1015,13 +1015,13 @@ do
  Size = UDim2New(0, 15, 0, 15),
  BorderSizePixel = 0,
  TextSize = 14,
- BackgroundColor3 = FromRGB(140, 255, 213),
+ BackgroundColor3 = FromRGB(208, 62, 52),
  })
 
  Instances:Create("UIStroke", {
  Parent = Items["ColorpickerButton"].Instance,
  Name = "\0",
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  }):AddToTheme({ Color = "Border" })
@@ -1041,16 +1041,16 @@ do
  Name = "\0",
  Visible = false,
  Position = UDim2New(0, 1032, 0, 123),
- BorderColor3 = FromRGB(0, 34, 37),
+ BorderColor3 = FromRGB(22, 22, 26),
  Size = UDim2New(0, 232, 0, 265),
- BorderSizePixel = 2,
- BackgroundColor3 = FromRGB(17, 21, 27),
+ BorderSizePixel = 1,
+ BackgroundColor3 = FromRGB(11, 11, 13),
  })
 
  Items["Glow"] = Instances:Create("ImageLabel", {
  Parent = Items["ColorpickerWindow"].Instance,
  Name = "\0",
- ImageColor3 = FromRGB(94, 213, 213),
+ ImageColor3 = FromRGB(208, 62, 52),
  ScaleType = Enum.ScaleType.Slice,
  ImageTransparency = 0.699999988079071,
  BorderColor3 = FromRGB(0, 0, 0),
@@ -1065,6 +1065,7 @@ do
  SliceCenter = RectNew(Vector2New(21, 21), Vector2New(79, 79)),
  })
  Items["Glow"]:AddToTheme({ ImageColor3 = "Accent" })
+ Items["Glow"].Instance.Visible = false
 
  Instances:Create("UIGradient", {
  Parent = Items["Glow"].Instance,
@@ -1076,7 +1077,7 @@ do
  Instances:Create("UIStroke", {
  Parent = Items["ColorpickerWindow"].Instance,
  Name = "\0",
- Color = FromRGB(94, 213, 213),
+ Color = FromRGB(208, 62, 52),
  LineJoinMode = Enum.LineJoinMode.Miter,
  }):AddToTheme({ Color = "Accent" })
 
@@ -1094,7 +1095,7 @@ do
  Size = UDim2New(1, -16, 0, 10),
  ZIndex = 2,
  TextSize = 14,
- BackgroundColor3 = FromRGB(140, 255, 213),
+ BackgroundColor3 = FromRGB(208, 62, 52),
  })
 
  Items["Checkers"] = Instances:Create("ImageLabel", {
@@ -1135,7 +1136,7 @@ do
  Instances:Create("UIStroke", {
  Parent = Items["AlphaDragger"].Instance,
  Name = "\0",
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  }):AddToTheme({ Color = "Border" })
@@ -1190,7 +1191,7 @@ do
  Instances:Create("UIStroke", {
  Parent = Items["Hue"].Instance,
  Name = "\0",
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  }):AddToTheme({ Color = "Border" })
@@ -1210,7 +1211,7 @@ do
  Instances:Create("UIStroke", {
  Parent = Items["HueDragger"].Instance,
  Name = "\0",
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  }):AddToTheme({ Color = "Border" })
@@ -1228,13 +1229,13 @@ do
  Size = UDim2New(1, -31, 1, -59),
  ZIndex = 2,
  TextSize = 14,
- BackgroundColor3 = FromRGB(140, 255, 213),
+ BackgroundColor3 = FromRGB(208, 62, 52),
  })
 
  Instances:Create("UIStroke", {
  Parent = Items["Palette"].Instance,
  Name = "\0",
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  }):AddToTheme({ Color = "Border" })
@@ -1286,7 +1287,7 @@ do
  Instances:Create("UIStroke", {
  Parent = Items["PaletteDragger"].Instance,
  Name = "\0",
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  }):AddToTheme({ Color = "Border" })
@@ -1305,14 +1306,14 @@ do
  Position = UDim2New(0, 8, 1, -7),
  BorderSizePixel = 0,
  TextSize = 14,
- BackgroundColor3 = FromRGB(32, 38, 48),
+ BackgroundColor3 = FromRGB(24, 24, 29),
  })
  Items["HexInput"]:AddToTheme({ TextColor3 = "Text", BackgroundColor3 = "Element" })
 
  Instances:Create("UIStroke", {
  Parent = Items["HexInput"].Instance,
  Name = "\0",
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  }):AddToTheme({ Color = "Border" })
@@ -1324,7 +1325,7 @@ do
  BorderColor3 = FromRGB(0, 0, 0),
  Size = UDim2New(0, 50, 0, 20),
  BorderSizePixel = 0,
- BackgroundColor3 = FromRGB(32, 38, 48),
+ BackgroundColor3 = FromRGB(24, 24, 29),
  AutomaticSize = Enum.AutomaticSize.Y,
  })
  Items["ColorpickerWindow2"]:AddToTheme({ BackgroundColor3 = "Element" })
@@ -1332,7 +1333,7 @@ do
  Instances:Create("UIStroke", {
  Parent = Items["ColorpickerWindow2"].Instance,
  Name = "\0",
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  }):AddToTheme({ Color = "Border" })
@@ -1358,7 +1359,7 @@ do
  Size = UDim2New(1, 0, 0, 20),
  BorderSizePixel = 0,
  TextSize = 14,
- BackgroundColor3 = FromRGB(32, 38, 48),
+ BackgroundColor3 = FromRGB(24, 24, 29),
  })
  NewButton:AddToTheme({ TextColor3 = "Text" })
 
@@ -1838,7 +1839,7 @@ do
  BorderColor3 = FromRGB(0, 0, 0),
  AutomaticSize = Enum.AutomaticSize.X,
  TextSize = 14,
- BackgroundColor3 = FromRGB(32, 38, 48),
+ BackgroundColor3 = FromRGB(24, 24, 29),
  })
  Items["KeyButton"]:AddToTheme({ TextColor3 = "Text", BackgroundColor3 = "Element" })
 
@@ -1852,7 +1853,7 @@ do
  Instances:Create("UIStroke", {
  Parent = Items["KeyButton"].Instance,
  Name = "\0",
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  }):AddToTheme({ Color = "Border" })
@@ -1866,7 +1867,7 @@ do
  ZIndex = 5,
  Size = UDim2New(0, 78, 0, 66),
  BorderSizePixel = 0,
- BackgroundColor3 = FromRGB(32, 38, 48),
+ BackgroundColor3 = FromRGB(24, 24, 29),
  })
  Items["KeybindWindow"]:AddToTheme({ BackgroundColor3 = "Element" })
 
@@ -1883,7 +1884,7 @@ do
  Size = UDim2New(1, -4, 0, 20),
  ZIndex = 5,
  TextSize = 14,
- BackgroundColor3 = FromRGB(32, 38, 48),
+ BackgroundColor3 = FromRGB(24, 24, 29),
  })
  Items["Toggle"]:AddToTheme({ BackgroundColor3 = "Element" })
 
@@ -1900,7 +1901,7 @@ do
  Items["ToggleStroke"] = Instances:Create("UIStroke", {
  Parent = Items["Toggle"].Instance,
  Name = "\0",
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  })
@@ -1913,7 +1914,7 @@ do
  BorderColor3 = FromRGB(0, 0, 0),
  ZIndex = 5,
  BorderSizePixel = 0,
- BackgroundColor3 = FromRGB(94, 213, 213),
+ BackgroundColor3 = FromRGB(208, 62, 52),
  })
  Items["ToggleLiner"]:AddToTheme({ BackgroundColor3 = "Accent" })
 
@@ -1950,7 +1951,7 @@ do
  Size = UDim2New(1, -4, 0, 20),
  ZIndex = 5,
  TextSize = 14,
- BackgroundColor3 = FromRGB(32, 38, 48),
+ BackgroundColor3 = FromRGB(24, 24, 29),
  })
  Items["Hold"]:AddToTheme({ BackgroundColor3 = "Element" })
 
@@ -1969,7 +1970,7 @@ do
  Name = "\0",
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  Transparency = 1,
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  })
  Items["HoldStroke"]:AddToTheme({ Color = "Border" })
@@ -1982,7 +1983,7 @@ do
  BorderColor3 = FromRGB(0, 0, 0),
  ZIndex = 5,
  BorderSizePixel = 0,
- BackgroundColor3 = FromRGB(94, 213, 213),
+ BackgroundColor3 = FromRGB(208, 62, 52),
  })
  Items["HoldLiner"]:AddToTheme({ BackgroundColor3 = "Accent" })
 
@@ -2020,7 +2021,7 @@ do
  Size = UDim2New(1, -4, 0, 20),
  ZIndex = 5,
  TextSize = 14,
- BackgroundColor3 = FromRGB(32, 38, 48),
+ BackgroundColor3 = FromRGB(24, 24, 29),
  })
 
  Instances:Create("UIGradient", {
@@ -2038,7 +2039,7 @@ do
  Name = "\0",
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  Transparency = 1,
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  })
  Items["AlwaysOnStroke"]:AddToTheme({ Color = "Border" })
@@ -2051,7 +2052,7 @@ do
  BorderColor3 = FromRGB(0, 0, 0),
  ZIndex = 5,
  BorderSizePixel = 0,
- BackgroundColor3 = FromRGB(94, 213, 213),
+ BackgroundColor3 = FromRGB(208, 62, 52),
  })
  Items["AlwaysOnLiner"]:AddToTheme({ BackgroundColor3 = "Accent" })
 
@@ -2466,10 +2467,10 @@ do
  Name = "\0",
  AnchorPoint = Vector2New(0.5, 0),
  Position = UDim2New(0.5, 0, 0, 25),
- BorderColor3 = FromRGB(0, 34, 37),
+ BorderColor3 = FromRGB(22, 22, 26),
  Size = UDim2New(0, 180, 0, 30),
- BorderSizePixel = 2,
- BackgroundColor3 = FromRGB(17, 21, 27),
+ BorderSizePixel = 1,
+ BackgroundColor3 = FromRGB(11, 11, 13),
  ZIndex = 5,
  })
  Items["Watermark"]:AddToTheme({ BackgroundColor3 = "Background 1" })
@@ -2477,7 +2478,7 @@ do
  Items["UIStroke"] = Instances:Create("UIStroke", {
  Parent = Items["Watermark"].Instance,
  Name = "\0",
- Color = FromRGB(94, 213, 213),
+ Color = FromRGB(208, 62, 52),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  })
@@ -2489,16 +2490,14 @@ do
  Rotation = 90,
  Transparency = NumSequence({
  NumSequenceKeypoint(0, 0),
- NumSequenceKeypoint(0.696, 0.2749999761581421),
- NumSequenceKeypoint(0.84, 0.574999988079071),
- NumSequenceKeypoint(1, 1),
+ NumSequenceKeypoint(1, 0),
  }),
  })
 
  Items["Glow"] = Instances:Create("ImageLabel", {
  Parent = Items["Watermark"].Instance,
  Name = "\0",
- ImageColor3 = FromRGB(94, 213, 213),
+ ImageColor3 = FromRGB(208, 62, 52),
  ScaleType = Enum.ScaleType.Slice,
  ImageTransparency = 0.5,
  BorderColor3 = FromRGB(0, 0, 0),
@@ -2513,6 +2512,7 @@ do
  SliceCenter = RectNew(Vector2New(21, 21), Vector2New(79, 79)),
  })
  Items["Glow"]:AddToTheme({ ImageColor3 = "Accent" })
+ Items["Glow"].Instance.Visible = false
 
  Instances:Create("UIGradient", {
  Parent = Items["Glow"].Instance,
@@ -2570,7 +2570,7 @@ do
  BorderColor3 = FromRGB(0, 0, 0),
  BorderSizePixel = 0,
  AutomaticSize = Enum.AutomaticSize.XY,
- BackgroundColor3 = FromRGB(24, 28, 36),
+ BackgroundColor3 = FromRGB(17, 17, 21),
  })
  Items["KeybindList"]:AddToTheme({ BackgroundColor3 = "Background 2" })
 
@@ -2590,18 +2590,18 @@ do
  BorderColor3 = FromRGB(0, 0, 0),
  Size = UDim2New(1, 18, 0, 2),
  BorderSizePixel = 0,
- BackgroundColor3 = FromRGB(94, 213, 213),
+ BackgroundColor3 = FromRGB(208, 62, 52),
  })
  Items["Liner"]:AddToTheme({ BackgroundColor3 = "Accent" })
 
  Items["Glow"] = Instances:Create("ImageLabel", {
  Parent = Items["Liner"].Instance,
  Name = "\0",
- ImageColor3 = FromRGB(94, 213, 213),
+ ImageColor3 = FromRGB(208, 62, 52),
  ScaleType = Enum.ScaleType.Slice,
  ImageTransparency = 0.5,
  BorderColor3 = FromRGB(0, 0, 0),
- BackgroundColor3 = FromRGB(94, 213, 213),
+ BackgroundColor3 = FromRGB(208, 62, 52),
  Size = UDim2New(0, 113, 1, 8),
  AnchorPoint = Vector2New(0.5, 0.5),
  Image = "rbxassetid://18245826428",
@@ -2612,6 +2612,7 @@ do
  SliceCenter = RectNew(Vector2New(21, 21), Vector2New(79, 79)),
  })
  Items["Glow"]:AddToTheme({ ImageColor3 = "Accent" })
+ Items["Glow"].Instance.Visible = false
 
  Instances:Create("UIGradient", {
  Parent = Items["Glow"].Instance,
@@ -2643,7 +2644,7 @@ do
  BorderColor3 = FromRGB(0, 0, 0),
  Size = UDim2New(1, 0, 0, 1),
  BorderSizePixel = 0,
- BackgroundColor3 = FromRGB(46, 52, 61),
+ BackgroundColor3 = FromRGB(38, 38, 46),
  })
  Items["Liner2"]:AddToTheme({ BackgroundColor3 = "Border" })
 
@@ -2668,7 +2669,7 @@ do
  Instances:Create("UIStroke", {
  Parent = Items["KeybindList"].Instance,
  Name = "\0",
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  }):AddToTheme({ Color = "Border" })
@@ -2729,7 +2730,7 @@ do
  Size = UDim2New(0, 295, 0, 220),
  BorderSizePixel = 0,
  ZIndex = 8,
- BackgroundColor3 = FromRGB(24, 28, 36),
+ BackgroundColor3 = FromRGB(17, 17, 21),
  })
  Items["ArmorViewer"]:AddToTheme({ BackgroundColor3 = "Background 2" })
 
@@ -2743,18 +2744,18 @@ do
  Size = UDim2New(1, 0, 0, 2),
  BorderSizePixel = 0,
  ZIndex = 8,
- BackgroundColor3 = FromRGB(94, 213, 213),
+ BackgroundColor3 = FromRGB(208, 62, 52),
  })
  Items["Liner"]:AddToTheme({ BackgroundColor3 = "Accent" })
 
  Items["Glow"] = Instances:Create("ImageLabel", {
  Parent = Items["Liner"].Instance,
  Name = "\0",
- ImageColor3 = FromRGB(94, 213, 213),
+ ImageColor3 = FromRGB(208, 62, 52),
  ScaleType = Enum.ScaleType.Slice,
  ImageTransparency = 0.5,
  BorderColor3 = FromRGB(0, 0, 0),
- BackgroundColor3 = FromRGB(94, 213, 213),
+ BackgroundColor3 = FromRGB(208, 62, 52),
  Size = UDim2New(1, 8, 1, 8),
  AnchorPoint = Vector2New(0.5, 0.5),
  Image = "rbxassetid://18245826428",
@@ -2765,6 +2766,7 @@ do
  SliceCenter = RectNew(Vector2New(21, 21), Vector2New(79, 79)),
  })
  Items["Glow"]:AddToTheme({ ImageColor3 = "Accent" })
+ Items["Glow"].Instance.Visible = false
 
  Instances:Create("UIGradient", {
  Parent = Items["Glow"].Instance,
@@ -2807,7 +2809,7 @@ do
  Instances:Create("UIStroke", {
  Parent = Items["Holder"].Instance,
  Name = "\0",
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  }):AddToTheme({ Color = "Border" })
@@ -2819,7 +2821,7 @@ do
  AutomaticCanvasSize = Enum.AutomaticSize.Y,
  BorderSizePixel = 0,
  CanvasSize = UDim2New(0, 0, 0, 0),
- ScrollBarImageColor3 = FromRGB(46, 52, 61),
+ ScrollBarImageColor3 = FromRGB(38, 38, 46),
  MidImage = "rbxassetid://93024691806056",
  BorderColor3 = FromRGB(0, 0, 0),
  ScrollBarThickness = 3,
@@ -2868,7 +2870,7 @@ do
  Instances:Create("UIStroke", {
  Parent = NewItem.Instance,
  Name = "\0",
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  }):AddToTheme({ Color = "Border" })
@@ -2927,7 +2929,7 @@ do
  BorderColor3 = FromRGB(0, 0, 0),
  BorderSizePixel = 0,
  AutomaticSize = Enum.AutomaticSize.XY,
- BackgroundColor3 = FromRGB(24, 28, 36),
+ BackgroundColor3 = FromRGB(17, 17, 21),
  })
  Items["Notification"]:AddToTheme({ BackgroundColor3 = "Inline" })
 
@@ -2960,7 +2962,7 @@ do
  Instances:Create("UIStroke", {
  Parent = Items["Notification"].Instance,
  Name = "\0",
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  }):AddToTheme({ Color = "Border" })
@@ -3020,7 +3022,7 @@ do
  BorderSizePixel = 0,
  ZIndex = 6,
  AutomaticSize = Enum.AutomaticSize.Y,
- BackgroundColor3 = FromRGB(17, 21, 27),
+ BackgroundColor3 = FromRGB(11, 11, 13),
  Visible = false,
  })
  Items["TargetHud"]:AddToTheme({ BackgroundColor3 = "Background 1" })
@@ -3030,7 +3032,7 @@ do
  Instances:Create("UIStroke", {
  Parent = Items["TargetHud"].Instance,
  Name = "\0",
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  }):AddToTheme({ Color = "Border" })
@@ -3061,19 +3063,19 @@ do
  Size = UDim2New(1, 0, 0, 2),
  ZIndex = 6,
  BorderSizePixel = 0,
- BackgroundColor3 = FromRGB(94, 213, 213),
+ BackgroundColor3 = FromRGB(208, 62, 52),
  })
  Items["Liner"]:AddToTheme({ BackgroundColor3 = "Accent" })
 
  Items["Glow"] = Instances:Create("ImageLabel", {
  Parent = Items["Liner"].Instance,
  Name = "\0",
- ImageColor3 = FromRGB(94, 213, 213),
+ ImageColor3 = FromRGB(208, 62, 52),
  ScaleType = Enum.ScaleType.Slice,
  ImageTransparency = 0.5,
  BorderColor3 = FromRGB(0, 0, 0),
  ZIndex = 6,
- BackgroundColor3 = FromRGB(94, 213, 213),
+ BackgroundColor3 = FromRGB(208, 62, 52),
  Size = UDim2New(1, 8, 1, 8),
  AnchorPoint = Vector2New(0.5, 0.5),
  Image = "rbxassetid://18245826428",
@@ -3083,6 +3085,7 @@ do
  SliceCenter = RectNew(Vector2New(21, 21), Vector2New(79, 79)),
  })
  Items["Glow"]:AddToTheme({ ImageColor3 = "Accent" })
+ Items["Glow"].Instance.Visible = false
 
  Instances:Create("UIGradient", {
  Parent = Items["Glow"].Instance,
@@ -3107,7 +3110,7 @@ do
  Instances:Create("UIStroke", {
  Parent = Items["Content"].Instance,
  Name = "\0",
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  }):AddToTheme({ Color = "Border" })
@@ -3199,7 +3202,7 @@ do
  Instances:Create("UIStroke", {
  Parent = NewBarBackground.Instance,
  Name = "\0",
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  }):AddToTheme({ Color = "Border" })
@@ -3292,7 +3295,7 @@ do
  Data = Data or {}
 
  local Window = {
- Name = Data.Name or Data.name or "Bronx Dupe",
+ Name = Data.Name or Data.name or "mist",
 
  Pages = {},
  Items = {},
@@ -3306,10 +3309,10 @@ do
  Name = "\0",
  AnchorPoint = Vector2New(0.5, 0.5),
  Position = UDim2New(0.5, 0, 0.5, 0),
- BorderColor3 = FromRGB(0, 34, 37),
+ BorderColor3 = FromRGB(22, 22, 26),
  Size = not IsMobile and UDim2New(0, 621, 0, 542) or UDim2New(0, 375, 0, 400),
- BorderSizePixel = 2,
- BackgroundColor3 = FromRGB(17, 21, 27),
+ BorderSizePixel = 1,
+ BackgroundColor3 = FromRGB(11, 11, 13),
  })
  Items["MainFrame"]:AddToTheme({ BackgroundColor3 = "Background 1" })
 
@@ -3321,7 +3324,7 @@ do
  Items["UIStroke"] = Instances:Create("UIStroke", {
  Parent = Items["MainFrame"].Instance,
  Name = "\0",
- Color = FromRGB(94, 213, 213),
+ Color = FromRGB(208, 62, 52),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  })
@@ -3333,9 +3336,7 @@ do
  Rotation = 90,
  Transparency = NumSequence({
  NumSequenceKeypoint(0, 0),
- NumSequenceKeypoint(0.696, 0.2749999761581421),
- NumSequenceKeypoint(0.84, 0.574999988079071),
- NumSequenceKeypoint(1, 1),
+ NumSequenceKeypoint(1, 0),
  }),
  })
 
@@ -3344,7 +3345,7 @@ do
  Name = "\0",
  BackgroundTransparency = 1,
  Position = UDim2New(0, 1, 0, 1),
- BorderColor3 = FromRGB(0, 34, 37),
+ BorderColor3 = FromRGB(22, 22, 26),
  Size = UDim2New(1, -2, 1, -2),
  BorderSizePixel = 0,
  BackgroundColor3 = FromRGB(255, 255, 255),
@@ -3353,24 +3354,19 @@ do
  Instances:Create("UIStroke", {
  Parent = Items["Inline"].Instance,
  Name = "\0",
- Color = FromRGB(0, 34, 37),
+ Color = FromRGB(22, 22, 26),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  }):AddToTheme({ Color = "Window Outline" })
 
- Items["Logo"] = Instances:Create("TextLabel", {
+ Items["Logo"] = Instances:Create("Frame", {
  Parent = Items["Inline"].Instance,
  Name = "\0",
- FontFace = Library.Font,
- Text = "M",
- TextColor3 = FromRGB(255, 45, 45),
- BorderColor3 = FromRGB(0, 0, 0),
- BackgroundTransparency = 1,
- Position = UDim2New(0, 8, 0, 10),
- Size = UDim2New(0, 18, 0, 18),
  BorderSizePixel = 0,
- TextSize = 15,
- BackgroundColor3 = FromRGB(255, 255, 255),
+ BackgroundColor3 = FromRGB(208, 62, 52),
+ Position = UDim2New(0, 10, 0, 12),
+ Size = UDim2New(0, 3, 0, 14),
+ BackgroundTransparency = 0,
  })
 
  Items["Title"] = Instances:Create("TextLabel", {
@@ -3382,7 +3378,7 @@ do
  Text = Window.Name,
  Size = UDim2New(0, 0, 0, 15),
  BackgroundTransparency = 1,
- Position = UDim2New(0, 32, 0, 10),
+ Position = UDim2New(0, 20, 0, 10),
  BorderSizePixel = 0,
  AutomaticSize = Enum.AutomaticSize.X,
  TextSize = 14,
@@ -3406,7 +3402,7 @@ do
  Instances:Create("UIStroke", {
  Parent = Items["Content"].Instance,
  Name = "\0",
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  }):AddToTheme({ Color = "Border" })
@@ -3433,7 +3429,7 @@ do
  Items["Glow"] = Instances:Create("ImageLabel", {
  Parent = Items["MainFrame"].Instance,
  Name = "\0",
- ImageColor3 = FromRGB(94, 213, 213),
+ ImageColor3 = FromRGB(208, 62, 52),
  ScaleType = Enum.ScaleType.Slice,
  ImageTransparency = 0.5,
  BorderColor3 = FromRGB(0, 0, 0),
@@ -3448,6 +3444,7 @@ do
  SliceCenter = RectNew(Vector2New(21, 21), Vector2New(79, 79)),
  })
  Items["Glow"]:AddToTheme({ ImageColor3 = "Accent" })
+ Items["Glow"].Instance.Visible = false
 
  Instances:Create("UIGradient", {
  Parent = Items["Glow"].Instance,
@@ -3562,7 +3559,7 @@ do
  Instances:Create("UIStroke", {
  Parent = Items["Inactive"].Instance,
  Name = "\0",
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  }):AddToTheme({ Color = "Border" })
@@ -3575,7 +3572,7 @@ do
  BorderColor3 = FromRGB(0, 0, 0),
  ZIndex = 2,
  BorderSizePixel = 0,
- BackgroundColor3 = FromRGB(94, 213, 213),
+ BackgroundColor3 = FromRGB(208, 62, 52),
  })
  Items["Liner"]:AddToTheme({ BackgroundColor3 = "Accent" })
 
@@ -3593,11 +3590,12 @@ do
  BorderColor3 = FromRGB(0, 0, 0),
  BackgroundTransparency = 1,
  Position = UDim2New(0.5, 0, 0.5, 0),
- ImageColor3 = FromRGB(94, 213, 213),
+ ImageColor3 = FromRGB(208, 62, 52),
  Size = UDim2New(1, 8, 1, 8),
  BackgroundColor3 = FromRGB(255, 255, 255),
  })
  Items["Glow"]:AddToTheme({ ImageColor3 = "Accent" })
+ Items["Glow"].Instance.Visible = false
 
  Instances:Create("UIGradient", {
  Parent = Items["Glow"].Instance,
@@ -3660,7 +3658,7 @@ do
  Position = UDim2New(0, 0, 1, 1),
  Size = UDim2New(1, 0, 0, 2),
  BorderSizePixel = 0,
- BackgroundColor3 = FromRGB(17, 21, 27),
+ BackgroundColor3 = FromRGB(11, 11, 13),
  })
  Items["Hide"]:AddToTheme({ BackgroundColor3 = "Background 1" })
 
@@ -3815,7 +3813,7 @@ do
  Instances:Create("UIStroke", {
  Parent = Items["Section"].Instance,
  Name = "\0",
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  }):AddToTheme({ Color = "Border" })
@@ -3849,7 +3847,7 @@ do
  Instances:Create("UIStroke", {
  Parent = Items["Topbar"].Instance,
  Name = "\0",
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  }):AddToTheme({ Color = "Border" })
@@ -3860,7 +3858,7 @@ do
  BorderColor3 = FromRGB(0, 0, 0),
  Size = UDim2New(0, 1, 1, 0),
  BorderSizePixel = 0,
- BackgroundColor3 = FromRGB(94, 213, 213),
+ BackgroundColor3 = FromRGB(208, 62, 52),
  })
  Items["Liner"]:AddToTheme({ BackgroundColor3 = "Accent" })
 
@@ -3958,14 +3956,14 @@ do
  BorderColor3 = FromRGB(0, 0, 0),
  Size = UDim2New(0, 12, 0, 12),
  BorderSizePixel = 0,
- BackgroundColor3 = FromRGB(32, 38, 48),
+ BackgroundColor3 = FromRGB(24, 24, 29),
  })
  Items["IndicatorOutline"]:AddToTheme({ BackgroundColor3 = "Element" })
 
  Instances:Create("UIStroke", {
  Parent = Items["IndicatorOutline"].Instance,
  Name = "\0",
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  }):AddToTheme({ Color = "Border" })
@@ -3979,7 +3977,7 @@ do
  BorderColor3 = FromRGB(0, 0, 0),
  Size = UDim2New(0, -2, 0, 0),
  BorderSizePixel = 0,
- BackgroundColor3 = FromRGB(94, 213, 213),
+ BackgroundColor3 = FromRGB(208, 62, 52),
  })
  Items["IndicatorInline"]:AddToTheme({ BackgroundColor3 = "Accent" })
 
@@ -4162,7 +4160,7 @@ do
  Size = UDim2New(1, 0, 0, 20),
  BorderSizePixel = 0,
  TextSize = 14,
- BackgroundColor3 = FromRGB(32, 38, 48),
+ BackgroundColor3 = FromRGB(24, 24, 29),
  })
  Items["Button"]:AddToTheme({ BackgroundColor3 = "Element" })
 
@@ -4270,14 +4268,14 @@ do
  Size = UDim2New(1, 0, 0, 12),
  BorderSizePixel = 0,
  TextSize = 14,
- BackgroundColor3 = FromRGB(32, 38, 48),
+ BackgroundColor3 = FromRGB(24, 24, 29),
  })
  Items["RealSlider"]:AddToTheme({ BackgroundColor3 = "Element" })
 
  Instances:Create("UIStroke", {
  Parent = Items["RealSlider"].Instance,
  Name = "\0",
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  }):AddToTheme({ Color = "Border" })
@@ -4289,7 +4287,7 @@ do
  BorderColor3 = FromRGB(0, 0, 0),
  Size = UDim2New(0.5, 0, 1, -2),
  BorderSizePixel = 0,
- BackgroundColor3 = FromRGB(94, 213, 213),
+ BackgroundColor3 = FromRGB(208, 62, 52),
  })
  Items["Accent"]:AddToTheme({ BackgroundColor3 = "Accent" })
 
@@ -4468,14 +4466,14 @@ do
  Size = UDim2New(1, 0, 0, 20),
  BorderSizePixel = 0,
  TextSize = 14,
- BackgroundColor3 = FromRGB(32, 38, 48),
+ BackgroundColor3 = FromRGB(24, 24, 29),
  })
  Items["RealDropdown"]:AddToTheme({ BackgroundColor3 = "Element" })
 
  Instances:Create("UIStroke", {
  Parent = Items["RealDropdown"].Instance,
  Name = "\0",
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  }):AddToTheme({ Color = "Border" })
@@ -4511,14 +4509,14 @@ do
  Size = UDim2New(1, 0, 0, 130),
  BorderSizePixel = 0,
  TextSize = 14,
- BackgroundColor3 = FromRGB(32, 38, 48),
+ BackgroundColor3 = FromRGB(24, 24, 29),
  })
  Items["OptionHolder"]:AddToTheme({ BackgroundColor3 = "Element" })
 
  Instances:Create("UIStroke", {
  Parent = Items["OptionHolder"].Instance,
  Name = "\0",
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  }):AddToTheme({ Color = "Border" })
@@ -4550,7 +4548,7 @@ do
  AutomaticCanvasSize = Enum.AutomaticSize.Y,
  BorderSizePixel = 0,
  CanvasSize = UDim2New(0, 0, 0, 0),
- ScrollBarImageColor3 = FromRGB(46, 52, 61),
+ ScrollBarImageColor3 = FromRGB(38, 38, 46),
  MidImage = "rbxassetid://93024691806056",
  BorderColor3 = FromRGB(0, 0, 0),
  ScrollBarThickness = 4,
@@ -4762,7 +4760,7 @@ do
  Size = UDim2New(1, 0, 0, 20),
  BorderSizePixel = 0,
  TextSize = 14,
- BackgroundColor3 = FromRGB(32, 38, 48),
+ BackgroundColor3 = FromRGB(24, 24, 29),
  })
  OptionButton:AddToTheme({ BackgroundColor3 = "Element" })
 
@@ -4781,7 +4779,7 @@ do
  Name = "\0",
  ApplyStrokeMode = Enum.ApplyStrokeMode.Border,
  Transparency = 1,
- Color = FromRGB(46, 52, 61),
+ Color = FromRGB(38, 38, 46),
  LineJoinMode = Enum.LineJoinMode.Miter,
  })
  OptionStroke:AddToTheme({ Color = "Border" })
@@ -4793,7 +4791,7 @@ do
  BorderColor3 = FromRGB(0, 0, 0),
  Size = UDim2New(0, 1, 1, 0),
  BorderSizePixel = 0,
- BackgroundColor3 = FromRGB(94, 213, 213),
+ BackgroundColor3 = FromRGB(208, 62, 52),
  })
  OptionLiner:AddToTheme({ BackgroundColor3 = "Accent" })
 
@@ -5154,7 +5152,7 @@ do
  TextXAlignment = Enum.TextXAlignment.Left,
  PlaceholderText = Textbox.Placeholder,
  TextSize = 14,
- BackgroundColor3 = FromRGB(32, 38, 48),
+ BackgroundColor3 = FromRGB(24, 24, 29),
  })
  Items["Input"]:AddToTheme({
  TextColor3 = "Text",
