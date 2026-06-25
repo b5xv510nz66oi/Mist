@@ -768,6 +768,9 @@ do
  end
 
  Library.Round = function(self, Number, Float)
+ if Float == 0 then
+ return MathFloor(Number + 0.5)
+ end
  local Multiplier = 1 / (Float or 1)
  return MathFloor(Number * Multiplier) / Multiplier
  end
